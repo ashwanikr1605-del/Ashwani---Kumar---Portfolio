@@ -1,0 +1,1789 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ashwani Kumar | Data Analytics & AI Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0d1117;
+      --card: #151a21;
+      --card-light: #1b222c;
+      --accent: #6c8cff;
+      --accent-hover: #829cff;
+      --text: #f2f5f8;
+      --muted: #9ca7b5;
+      --border: #29313c;
+      --success: #55d98a;
+      --radius: 16px;
+      --transition: 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(108, 140, 255, 0.08),
+          transparent 30%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+      padding: 35px 0;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .navbar {
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+
+      width: min(1150px, 92%);
+      margin: 15px auto 0;
+
+      background: rgba(21, 26, 33, 0.88);
+      backdrop-filter: blur(12px);
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      padding: 14px 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      min-height: 550px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 50px;
+
+      padding: 65px 55px;
+
+      background: linear-gradient(
+        135deg,
+        #151a21,
+        #11161d
+      );
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 300px;
+      height: 300px;
+
+      background: rgba(108, 140, 255, 0.08);
+
+      filter: blur(80px);
+
+      top: -120px;
+      right: -100px;
+
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 12px;
+
+      border: 1px solid var(--border);
+      border-radius: 7px;
+
+      color: var(--muted);
+
+      font-size: 0.78rem;
+      letter-spacing: 0.8px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero-badge i {
+      color: var(--success);
+      font-size: 8px;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+
+      line-height: 1.05;
+
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: 1.35rem;
+      color: #c8d0da;
+
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: 1rem;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 15px 25px;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-contact div {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    .hero-contact i {
+      color: var(--accent);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 11px 18px;
+
+      border-radius: 8px;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* HERO PHOTO */
+
+    .hero-avatar {
+      position: relative;
+      z-index: 2;
+
+      flex: 0 0 190px;
+    }
+
+    .avatar-wrapper {
+      width: 190px;
+      height: 190px;
+
+      padding: 6px;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      background: #10151c;
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 13px;
+
+      display: block;
+    }
+
+    /* =====================================================
+       GENERAL SECTION
+    ===================================================== */
+
+    .section-card {
+      background: rgba(21, 26, 33, 0.9);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      padding: 35px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 1.7rem;
+
+      margin-bottom: 25px;
+
+      padding-bottom: 14px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-text {
+      color: var(--muted);
+      max-width: 900px;
+      font-size: 0.98rem;
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(170px, 1fr));
+
+      gap: 12px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 15px;
+
+      background: var(--card-light);
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      color: #d8dee7;
+
+      font-size: 0.9rem;
+      font-weight: 500;
+
+      transition: var(--transition);
+    }
+
+    .skill-item i {
+      color: var(--accent);
+      width: 20px;
+      text-align: center;
+    }
+
+    .skill-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* =====================================================
+       EXPERIENCE / EDUCATION
+    ===================================================== */
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 18px;
+    }
+
+    .timeline-icon {
+      flex: 0 0 48px;
+
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(108, 140, 255, 0.1);
+
+      border: 1px solid rgba(108, 140, 255, 0.25);
+
+      border-radius: 12px;
+
+      color: var(--accent);
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 15px;
+
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .timeline-date {
+      white-space: nowrap;
+
+      padding: 4px 10px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      color: var(--muted);
+
+      font-size: 0.75rem;
+    }
+
+    .timeline-company {
+      color: var(--accent-hover);
+      font-size: 0.88rem;
+    }
+
+    .timeline-desc {
+      margin-top: 10px;
+      padding-left: 0;
+
+      list-style: none;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    .timeline-desc li {
+      display: flex;
+      gap: 9px;
+
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc i {
+      color: var(--accent);
+      font-size: 6px;
+      margin-top: 9px;
+    }
+
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 16px;
+    }
+
+    .project-card {
+      background: var(--card-light);
+
+      border: 1px solid var(--border);
+
+      border-radius: 13px;
+
+      padding: 23px;
+
+      transition: var(--transition);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .project-icon {
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(108, 140, 255, 0.1);
+
+      border-radius: 10px;
+
+      color: var(--accent);
+
+      font-size: 1.3rem;
+
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 1.15rem;
+
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+
+      font-size: 0.85rem;
+
+      margin-bottom: 15px;
+
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin-bottom: 18px;
+    }
+
+    .project-tags span {
+      padding: 4px 9px;
+
+      border-radius: 20px;
+
+      background: #202731;
+
+      border: 1px solid #303a47;
+
+      color: #aebaff;
+
+      font-size: 0.7rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      color: var(--accent-hover);
+
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .project-link:hover {
+      color: white;
+    }
+
+    /* =====================================================
+       CERTIFICATIONS
+    ===================================================== */
+
+    .cert-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+      gap: 14px;
+    }
+
+    .cert-item {
+      background: var(--card-light);
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      padding: 20px;
+
+      transition: var(--transition);
+    }
+
+    .cert-item:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .cert-item i {
+      color: var(--accent);
+      font-size: 1.4rem;
+
+      margin-bottom: 12px;
+    }
+
+    .cert-item strong {
+      display: block;
+
+      font-size: 0.95rem;
+
+      margin-bottom: 5px;
+    }
+
+    .cert-item span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-box {
+      display: grid;
+
+      grid-template-columns: 1.3fr 1fr;
+
+      gap: 35px;
+
+      align-items: center;
+    }
+
+    .contact-text h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 1.5rem;
+
+      margin-bottom: 8px;
+    }
+
+    .contact-text p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 12px 14px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 9px;
+
+      background: var(--card-light);
+
+      transition: var(--transition);
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    .contact-link i {
+      width: 22px;
+      color: var(--accent);
+    }
+
+    .contact-link span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      width: min(1150px, 92%);
+
+      margin: auto;
+
+      padding: 25px 0 35px;
+
+      border-top: 1px solid var(--border);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: var(--muted);
+
+      font-size: 0.8rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      width: 35px;
+      height: 35px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border);
+
+      border-radius: 8px;
+
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* =====================================================
+       ANIMATION
+    ===================================================== */
+
+    .fade-in {
+      animation: fadeIn 0.7s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 800px) {
+
+      .navbar {
+        position: relative;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        padding: 45px 25px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-contact {
+        justify-content: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-avatar {
+        flex-basis: auto;
+      }
+
+      .avatar-wrapper {
+        width: 150px;
+        height: 150px;
+      }
+
+      .section-card {
+        padding: 25px 20px;
+      }
+
+      .timeline-header {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .container {
+        width: 94%;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .tagline {
+        font-size: 1.05rem;
+      }
+
+      .hero-contact {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+  ===================================================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      Ashwani<span>.</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <main class="container">
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <header class="hero fade-in">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <i class="fas fa-circle"></i>
+          Data & Technology
+        </div>
+
+        <h1>
+          Ashwani <span>Kumar</span>
+        </h1>
+
+        <p class="tagline">
+          B.Com (Hons.) Student | Data Analytics & AI Enthusiast
+        </p>
+
+        <p class="hero-description">
+          I’m Ashwani Kumar, a commerce student exploring
+          data analytics, Python and artificial intelligence
+          through practical projects. I enjoy turning ideas
+          into simple, useful digital solutions.
+        </p>
+
+        <div class="hero-contact">
+
+          <div>
+            <i class="fas fa-envelope"></i>
+            ashwanikr1605@gmail.com
+          </div>
+
+          <div>
+            <i class="fas fa-location-dot"></i>
+            Delhi, India
+          </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-folder-open"></i>
+            View Projects
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-paper-plane"></i>
+            Let's Connect
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-avatar">
+
+        <div class="avatar-wrapper">
+
+          <img
+            src="c:\Users\Ashwani\OneDrive\Pictures\Ashwani kumar.jpeg"
+            alt="Ashwani Kumar"
+          >
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section id="about" class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-user"></i>
+        About Me
+      </h2>
+
+      <p class="about-text">
+
+        I am a <strong>B.Com (Hons.) student</strong> with a
+        growing interest in <strong>Data Analytics,
+        Artificial Intelligence and Technology</strong>.
+
+        I am currently developing practical skills in Python,
+        SQL, Excel, Power BI and AI tools while building
+        projects to strengthen my understanding of real-world
+        applications.
+
+        My goal is to combine my commerce background with
+        technology and data-driven problem solving.
+
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section id="skills" class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-code"></i>
+        Technical Skills
+      </h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-item">
+          <i class="fab fa-python"></i>
+          Python
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-database"></i>
+          SQL
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-chart-column"></i>
+          Power BI
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-file-excel"></i>
+          Excel
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-chart-line"></i>
+          Data Analysis
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-table"></i>
+          Pandas
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-chart-pie"></i>
+          Data Visualization
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-brain"></i>
+          Machine Learning
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-robot"></i>
+          Artificial Intelligence
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-wand-magic-sparkles"></i>
+          Generative AI
+        </div>
+
+        <div class="skill-item">
+          <i class="fab fa-github"></i>
+          Git & GitHub
+        </div>
+
+        <div class="skill-item">
+          <i class="fas fa-laptop-code"></i>
+          Streamlit
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPERIENCE
+    ===================================================== -->
+
+    <section id="experience" class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-briefcase"></i>
+        Experience & Learning
+      </h2>
+
+      <div class="timeline">
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+
+          <div class="timeline-content">
+
+            <div class="timeline-header">
+
+              <div>
+                <div class="timeline-title">
+                  AI & Data Science Project Developer
+                </div>
+
+                <div class="timeline-company">
+                  Independent Projects
+                </div>
+              </div>
+
+              <span class="timeline-date">
+                2026 – Present
+              </span>
+
+            </div>
+
+            <ul class="timeline-desc">
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Built an AI chatbot using Python,
+                Streamlit and Google Gemini API.
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Developing practical projects in
+                AI, Python and Data Analytics.
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Practicing API integration and
+                application development.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+
+          <div class="timeline-content">
+
+            <div class="timeline-header">
+
+              <div>
+                <div class="timeline-title">
+                  Data Analytics Learner
+                </div>
+
+                <div class="timeline-company">
+                  Self-Learning & Projects
+                </div>
+              </div>
+
+              <span class="timeline-date">
+                2026 – Present
+              </span>
+
+            </div>
+
+            <ul class="timeline-desc">
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Learning Python, SQL, Excel and Power BI.
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Practicing data cleaning, visualization
+                and basic statistical analysis.
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Building practical projects to develop
+                analytical skills.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-icon">
+            <i class="fas fa-code"></i>
+          </div>
+
+          <div class="timeline-content">
+
+            <div class="timeline-header">
+
+              <div>
+                <div class="timeline-title">
+                  Web Development Project Developer
+                </div>
+
+                <div class="timeline-company">
+                  Personal Projects
+                </div>
+              </div>
+
+              <span class="timeline-date">
+                2026 – Present
+              </span>
+
+            </div>
+
+            <ul class="timeline-desc">
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Created responsive web pages using
+                HTML and CSS.
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Practicing frontend development,
+                layouts and UI design.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDUCATION
+    ===================================================== -->
+
+    <section id="education" class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-graduation-cap"></i>
+        Education
+      </h2>
+
+      <div class="timeline">
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-icon">
+            <i class="fas fa-university"></i>
+          </div>
+
+          <div class="timeline-content">
+
+            <div class="timeline-header">
+
+              <div>
+
+                <div class="timeline-title">
+                  Bachelor of Commerce (Honours)
+                </div>
+
+                <div class="timeline-company">
+                  University of Delhi
+                </div>
+
+              </div>
+
+              <span class="timeline-date">
+                2026 – 2029
+              </span>
+
+            </div>
+
+            <ul class="timeline-desc">
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Currently pursuing B.Com (Hons.).
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Developing knowledge in commerce,
+                business and finance.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-icon">
+            <i class="fas fa-database"></i>
+          </div>
+
+          <div class="timeline-content">
+
+            <div class="timeline-header">
+
+              <div>
+
+                <div class="timeline-title">
+                  Diploma in Data Science
+                </div>
+
+                <div class="timeline-company">
+                  Ducat – School of AI
+                </div>
+
+              </div>
+
+              <span class="timeline-date">
+                2026 – Present
+              </span>
+
+            </div>
+
+            <ul class="timeline-desc">
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Learning Data Science, Artificial
+                Intelligence and Machine Learning.
+              </li>
+
+              <li>
+                <i class="fas fa-circle"></i>
+                Developing practical knowledge through
+                projects and hands-on learning.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section id="projects" class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-folder-open"></i>
+        Featured Projects
+      </h2>
+
+      <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project-card">
+
+          <div class="project-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+
+          <h3>
+            AI Chatbot
+          </h3>
+
+          <p>
+            AI-powered chatbot built using Python,
+            Streamlit and Google Gemini API for
+            interactive conversations.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Streamlit</span>
+            <span>Gemini API</span>
+          </div>
+
+          <a
+            href="https://github.com/ashwanikr1605-del"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            View on GitHub
+            <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project-card">
+
+          <div class="project-icon">
+            <i class="fas fa-chart-column"></i>
+          </div>
+
+          <h3>
+            Data Analytics Dashboard
+          </h3>
+
+          <p>
+            Interactive dashboard concept focused on
+            analyzing data, identifying trends and
+            presenting meaningful business insights.
+          </p>
+
+          <div class="project-tags">
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>Analytics</span>
+          </div>
+
+          <a
+            href="https://github.com/ashwanikr1605-del"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            View on GitHub
+            <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </article>
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project-card">
+
+          <div class="project-icon">
+            <i class="fab fa-python"></i>
+          </div>
+
+          <h3>
+            Python Data Analysis
+          </h3>
+
+          <p>
+            Python-based data analysis project focused
+            on data cleaning, exploration, visualization
+            and extracting useful insights.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Matplotlib</span>
+          </div>
+
+          <a
+            href="https://github.com/ashwanikr1605-del"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            View on GitHub
+            <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </article>
+
+
+        <!-- PROJECT 4 -->
+
+        <article class="project-card">
+
+          <div class="project-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+
+          <h3>
+            Personal Portfolio Website
+          </h3>
+
+          <p>
+            Responsive personal portfolio website
+            showcasing skills, projects, education
+            and my journey in technology.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+
+          <a
+            href="https://github.com/ashwanikr1605-del"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            View on GitHub
+            <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CERTIFICATIONS
+    ===================================================== -->
+
+    <section class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-certificate"></i>
+        Certifications & Achievements
+      </h2>
+
+      <div class="cert-grid">
+
+
+        <div class="cert-item">
+
+          <i class="fab fa-python"></i>
+
+          <strong>
+            Python & Data Analytics
+          </strong>
+
+          <span>
+            Self-Learning · 2026 – Present
+          </span>
+
+        </div>
+
+
+        <div class="cert-item">
+
+          <i class="fas fa-robot"></i>
+
+          <strong>
+            AI Chatbot Project
+          </strong>
+
+          <span>
+            Personal Project · 2026
+          </span>
+
+        </div>
+
+
+        <div class="cert-item">
+
+          <i class="fas fa-code"></i>
+
+          <strong>
+            Web Development Projects
+          </strong>
+
+          <span>
+            Personal Projects · 2026
+          </span>
+
+        </div>
+
+
+        <div class="cert-item">
+
+          <i class="fas fa-graduation-cap"></i>
+
+          <strong>
+            B.Com (Hons.) Student
+          </strong>
+
+          <span>
+            University of Delhi · 2026 – Present
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section id="contact" class="section-card">
+
+      <h2 class="section-title">
+        <i class="fas fa-paper-plane"></i>
+        Let's Connect
+      </h2>
+
+      <div class="contact-box">
+
+
+        <div class="contact-text">
+
+          <h3>
+            Have a project or opportunity?
+          </h3>
+
+          <p>
+            I’m open to connecting, collaborating on
+            projects and discussing opportunities related
+            to Data Analytics, AI and technology.
+          </p>
+
+        </div>
+
+
+        <div class="contact-links">
+
+          <a
+            href="mailto:ashwanikr1605@gmail.com"
+            class="contact-link"
+          >
+
+            <i class="fas fa-envelope"></i>
+
+            <span>
+              ashwanikr1605@gmail.com
+            </span>
+
+          </a>
+
+
+          <a
+            href="https://github.com/ashwanikr1605-del"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+          >
+
+            <i class="fab fa-github"></i>
+
+            <span>
+              GitHub Profile
+            </span>
+
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/ashwani-kumar-42a962413/"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+          >
+
+            <i class="fab fa-linkedin"></i>
+
+            <span>
+              LinkedIn Profile
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+    <div>
+      © 2026 Ashwani Kumar. All rights reserved.
+    </div>
+
+    <div class="social-links">
+
+      <a
+        href="https://github.com/ashwanikr1605-del"
+        target="_blank"
+        rel="noopener"
+        aria-label="GitHub"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/ashwani-kumar-42a962413/"
+        target="_blank"
+        rel="noopener"
+        aria-label="LinkedIn"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <a
+        href="mailto:ashwanikr1605@gmail.com"
+        aria-label="Email"
+      >
+        <i class="fas fa-envelope"></i>
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+    console.log(
+      "Ashwani Kumar Portfolio — Loaded Successfully."
+    );
+
+  </script>
+
+</body>
+</html>
+```
